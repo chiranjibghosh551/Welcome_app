@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     // creating variables for our edit text and buttons.
     private EditText userNameEdt, dobEdt,emailEdt;
+    private DatePickerDialog picker;
     private Button registerBtn;
     DBlite DB;
 
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         registerBtn = findViewById(R.id.idBtnRegister);
         DB = new DBlite(this);
 
-        dobEdt.setOnClickListener(new View.OnClickListener() {
+       /* dobEdt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 final Calendar calendar = Calendar.getInstance();
@@ -47,16 +48,16 @@ public class MainActivity extends AppCompatActivity {
                 picker = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int year, int month, int dayOfMonth){
-
+                        dobEdt.setText(dayOfMonth+"/"+(month+1)+"/"+year);
                     }
 
 
-                });year,month,day
+                },year,month,day);
 
 
 
             }
-        });
+        });*/
 
 
 

@@ -15,11 +15,11 @@
         android:gravity="center_horizontal"
         android:padding="10dp"
         android:text="Welcome Buddy"
-        android:autoSizeMaxTextSize="32sp"
+
         android:textAlignment="center"
         android:textColor="@color/new_item"
 
-        android:textSize="18sp" />
+        android:textSize="30sp" />
     <EditText
         android:id="@+id/name"
         android:layout_width="match_parent"
