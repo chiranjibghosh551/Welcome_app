@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -20,13 +21,13 @@ import java.util.Calendar;
 public class MainActivity extends AppCompatActivity {
 
     // creating variables for our edit text and buttons.
-    private EditText userNameEdt, dobEdt,emailEdt;
-    private DatePickerDialog picker;
-    private Button registerBtn;
+    public EditText userNameEdt, dobEdt,emailEdt;
+    public DatePickerDialog picker;
+    public Button registerBtn,viewBtn;
     DBlite DB;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -35,30 +36,8 @@ public class MainActivity extends AppCompatActivity {
         emailEdt = findViewById(R.id.email);
         dobEdt = findViewById(R.id.dob);
         registerBtn = findViewById(R.id.idBtnRegister);
+        viewBtn = findViewById(R.id.idBtnView);
         DB = new DBlite(this);
-
-       /* dobEdt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                final Calendar calendar = Calendar.getInstance();
-                int day = calendar.get(Calendar.DAY_OF_MONTH);
-                int month = calendar.get(Calendar.MONTH);
-                int year= calendar.get(Calendar.YEAR);
-
-                picker = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker datePicker, int year, int month, int dayOfMonth){
-                        dobEdt.setText(dayOfMonth+"/"+(month+1)+"/"+year);
-                    }
-
-
-                },year,month,day);
-
-
-
-            }
-        });*/
-
 
 
         // adding on click listener for our button.
@@ -67,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 // on below line we are getting data from our edit text.
-                String userName = userNameEdt.getText().toString();
+                /*String userName = userNameEdt.getText().toString();
                 String emailName = emailEdt.getText().toString();
                 String dateOfBirth = dobEdt.getText().toString();
 
@@ -78,10 +57,14 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this,"",Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(MainActivity.this,"",Toast.LENGTH_SHORT).show();
-                }
+                }*/
+                Intent i = new Intent(MainActivity.this,);
+                startActivity(i);
             }
+
         });
-       /* registerBtn.setOnClickListener(new View.OnClickListener() {
+
+       /*registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Cursor res = DB.getdata();
@@ -104,14 +87,13 @@ public class MainActivity extends AppCompatActivity {
                 builder.show();
             }
         });*/
-        registerBtn.setOnClickListener(new View.OnClickListener() {
+       viewBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,ViewData.class);
                 startActivity(intent);
             }
         });
     }
-
 
 }

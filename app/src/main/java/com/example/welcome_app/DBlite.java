@@ -39,7 +39,7 @@ public class DBlite extends SQLiteOpenHelper {
     }
     public Cursor getdata()
     {
-        SQLiteDatabase DB = this.getWritableDatabase();
+        SQLiteDatabase DB = this.getReadableDatabase();
         Cursor cursor = DB.rawQuery("select * from Userinfo",null);
         return cursor;
     }

@@ -66,6 +66,18 @@
         android:textColor="@color/new_item"
         android:background="@color/new_item1"
         android:textAllCaps="false" />
+    <Button
+        android:id="@+id/idBtnView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idBtnRegister"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="10dp"
+        android:text="View Data"
+        android:textColor="@color/new_item"
+        android:background="@color/new_item1"
+        android:textAllCaps="false" />
 
 
 </RelativeLayout>
